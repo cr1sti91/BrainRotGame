@@ -13,7 +13,7 @@ FetchContent_MakeAvailable(SFML)
 file(GLOB_RECURSE SRC_FILES src/*.cpp)
 add_executable(game main.cpp ${SRC_FILES})
 target_include_directories(game PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
-target_link_libraries(game PRIVATE sfml-graphics sfml-system sfml-audio sfml-window sfml-network)
+target_link_libraries(game PRIVATE sfml-graphics)
 target_compile_features(game PRIVATE cxx_std_20)
 
 add_custom_command(TARGET game POST_BUILD
