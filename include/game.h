@@ -1,5 +1,4 @@
 #pragma once
-#include "auxFunctions.h"
 #include "bullet.h"
 
 
@@ -11,7 +10,12 @@ private:
 
     // Shapes
     sf::RectangleShape* borderShape; 
+    sf::RectangleShape* stickShape; 
     Bullet* bullet; 
+
+    bool stickIsMovingLeft; 
+    bool stickIsMovingRight; 
+
 
     // Text
     sf::Font font; 
@@ -25,6 +29,7 @@ private:
     //Private methods: update 
     void updateText(); 
     void updateBullets(); 
+    void updateStick(); 
     
     
     void update(); 

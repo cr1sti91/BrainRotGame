@@ -1,20 +1,21 @@
-#include "additional.h"
+#include "auxFunctions.h"
 
 class Bullet
 {
 private: 
-    sf::Texture* texture; 
-    sf::Sprite* sprite; 
+    sf::Clock clock; 
+    sf::CircleShape* shape; 
+    sf::Vector2f velocityUV; // unit vectors
     float movementSpeed; 
     float radius; 
-    float angle; 
-
+     
 public: 
     Bullet(); 
     ~Bullet(); 
 
-    void move(const std::optional<float> newAngle); 
+    void move(const std::optional<sf::Vector2f> newVelocityUV, const float dt); 
 
-    const sf::Sprite& getShape() const; 
-    const float getAngle() const; 
+    const sf::CircleShape& getShape() const; 
+    const sf::Vector2f& getVelocityUV() const; 
+    sf::Clock& getClock(); 
 }; 
