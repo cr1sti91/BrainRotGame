@@ -17,7 +17,7 @@ target_link_libraries(game PRIVATE sfml-graphics sfml-system sfml-audio sfml-win
 target_compile_features(game PRIVATE cxx_std_20)
 
 add_custom_command(TARGET game POST_BUILD
-    COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/img-fonts-music $<TARGET_FILE_DIR:game>/img-fonts-music
+    COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/Fonts $<TARGET_FILE_DIR:game>/Fonts
     COMMENT "Copying resources to output directory")
 
 if(WIN32)
